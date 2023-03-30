@@ -19,9 +19,7 @@ local soulGemsClasses = {
 local function modConfigReady()
 	-- add a nice header 
 	local template = mwse.mcm.createTemplate { name = this.mod, headerImagePath = "textures/jsmk/soulGemsMCMHeader.tga" }
-	template.onClose = function()
-		config.save()
-	end
+	template:saveOnClose(this.mod, config)
 	template:register()
 
 	-- INFO PAGE
